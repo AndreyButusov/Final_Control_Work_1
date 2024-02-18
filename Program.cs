@@ -10,9 +10,20 @@ string[] CreateMass(int CountStr)       //Создание массива дли
     return Array;
 }
 
-string[] ChangeMass(string[] str)       //Метод вычленения коротких значений массива
+int CountSmallString(string[] str)      //Счетчик количества коротких значений в массиве
 {
-    string[] newstr = new string[str.Length];
+    int Count = 0;
+    for (int i = 0; i < str.Length; i++)
+    {
+        if (str[i].Length <= 3)
+            Count++;
+    }
+    return Count;
+}
+
+string[] ChangeMass(string[] str)       //Метод создания нового массива с элементами, длина которых менее 3 символов
+{
+    string[] newstr = new string[CountSmallString(str)];
     int j = 0;
     for (int i = 0; i < str.Length; i++)
     {
