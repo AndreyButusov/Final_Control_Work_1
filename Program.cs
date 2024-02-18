@@ -1,6 +1,6 @@
 ﻿Console.Clear();
 
-string[] CreateMass(int CountStr)
+string[] CreateMass(int CountStr)       //Создание массива длиной, определенной пользователем
 {
     string[] Array = new string[CountStr];
     for (int i = 0; i < CountStr; i++)
@@ -10,8 +10,25 @@ string[] CreateMass(int CountStr)
     return Array;
 }
 
+string[] ChangeMass(string[] str)       //Метод вычленения коротких значений массива
+{
+    string[] newstr = new string[str.Length];
+    int j = 0;
+    for (int i = 0; i < str.Length; i++)
+    {
+        if (str[i].Length <= 3)
+        {
+            newstr[j] = str[i];
+            j++;
+        }
+    }
+    return newstr;
+}
+
 string[] str;
 Console.WriteLine("Введите количество элементов массива а затем задайте массив");
 int CountStr = int.Parse(Console.ReadLine()!);
 str = CreateMass(CountStr);
-Console.Write($"Массив [{string.Join(", ", str)}]");
+Console.WriteLine($"Массив [{string.Join(", ", str)}]");
+Console.Write("Массив коротких строковых значений:");
+Console.Write($" [{string.Join(", ", ChangeMass(str))}]");
