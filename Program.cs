@@ -1,0 +1,2 @@
+﻿string[] CreateMass(Args)
+while 
