@@ -40,7 +40,7 @@ string[] ChangeMass(string[] str, int Len)       //Метод создания �
 }
 
 string[] str;
-Console.WriteLine("Введите количество элементов массива а затем задайте массив");
+Console.WriteLine("Введите количество элементов массива, а затем задайте элементы массива");
 int CountStr = int.Parse(Console.ReadLine()!);
 str = CreateMass(CountStr);
 Console.WriteLine($"Массив [{string.Join(", ", str)}]");
