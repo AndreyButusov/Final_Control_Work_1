@@ -1,4 +1,7 @@
-﻿Console.Clear();
+﻿using System.Text;
+
+Console.Clear();
+Console.InputEncoding = Encoding.Unicode;
 
 string[] CreateMass(int CountStr)       //Создание массива длиной, определенной пользователем
 {
